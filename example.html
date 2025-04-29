@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.18/paper-full.min.js"
+    ></script>
+    <script type="text/javascript" src="paperjs-circle-menu.js"></script>
+    <script>
+      window.onload = function () {
+        let items = [
+          {
+            x: 0.255,
+            y: 0.129,
+            radius: 100,
+            label: "item 1",
+            href: "https://example.org",
+            style: {
+              fillColor: "lightcoral",
+            },
+            textStyle: {
+              fillColor: "red",
+              fontSize: 30,
+            },
+          },
+          {
+            x: 0.61,
+            y: 0.103,
+            radius: 120,
+            label: "wrapped\nitem 2",
+            onClick: () => {
+              window.location.href = "https://www.example.org";
+            },
+            style: {},
+          },
+          {
+            x: 0.3,
+            y: 0.65,
+            radius: 90,
+            label: "item3",
+            style: {},
+          },
+          {
+            x: 0.117,
+            y: 0.459,
+            radius: 80,
+            label: "item4",
+            style: {},
+          },
+          {
+            x: 0.488,
+            y: 0.8,
+            radius: 100,
+            label: "item5",
+            style: {},
+          },
+          {
+            x: 0.843,
+            y: 0.3,
+            radius: 100,
+            label: "item6",
+            style: {},
+          },
+          {
+            x: 0.64,
+            y: 0.59,
+            radius: 100,
+            label: "item7",
+            style: {},
+          },
+          {
+            x: 0.45,
+            y: 0.34,
+            radius: 110,
+            label: "item8",
+            style: {},
+          },
+        ];
+
+        let canvas = document.getElementById("canvas1");
+
+        var m = new CircleMenu(canvas, items, {
+          itemStyle: {
+            fillColor: "#021739",
+          },
+          itemTextStyle: {
+            fillColor: "lightblue",
+            fontSize: 42,
+          },
+          pointerStyle: {
+            fillColor: "#02FF39",
+            radius: 50,
+          },
+          maxDistance: 300,
+        });
+      };
+    </script>
+    <style>
+      #canvas1[resize] {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="canvas">
+      <canvas id="canvas1" resize="true"></canvas>
+    </div>
+  </body>
+</html>
